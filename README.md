@@ -37,4 +37,4 @@ Either the name of the Wikipedia pages or the query can be given. If the query i
 >>> similar.wikipedia_dataset_info
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
  'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.'}
->>> 
+```
