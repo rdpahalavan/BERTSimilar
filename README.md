@@ -9,3 +9,10 @@ Vocabularies used to generate word embeddings can be given in two ways:
 
 * Using Wikipedia pages
 * Using text files (.docx and .txt)
+
+## Install
+
+Install the library using
+```
+pip install BERTSimilarWords
+```
