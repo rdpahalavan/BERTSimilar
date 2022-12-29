@@ -22,6 +22,19 @@ Import it using
 >>> from BERTSimilarWords import BERTSimilarWords
 ```
 
-## Providing the vocabularies
+## Providing the Vocabulary
+
+Provide the literature (in terms of paragraphs), so the BERT model can generate the word embeddings for all the words present in the text.
 
 ### Using Wikipedia pages
+
+Either the name of the Wikipedia pages or the query can be given. If the query is given, the Wikipedia pages related to that query will be taken.
+
+```python
+>>> wikipedia_pages = ['Apple', 'Apple Inc.']
+>>> similar = BERTSimilarWords().load_dataset(wikipedia_page_list=wikipedia_pages)
+# To get the Wikipedia pages used,
+>>> similar.wikipedia_dataset_info
+{'Apple': 'https://en.wikipedia.org/wiki/Apple',
+ 'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.'}
+>>> 
