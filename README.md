@@ -64,3 +64,15 @@ or
  'Banana republic': 'https://en.wikipedia.org/wiki/Banana_republic',
  'Banana ketchup': 'https://en.wikipedia.org/wiki/Banana_ketchup'}
 ```
+
+### Using text files
+
+File extensions supported are .docx and .txt .
+
+```python
+similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
+```
+or
+```python
+similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
+```
