@@ -16,3 +16,8 @@ Install the library using
 ```
 pip install BERTSimilarWords
 ```
+
+Import it using
+```python
+>>> from BERTSimilarWords import BERTSimilarWords
+```
