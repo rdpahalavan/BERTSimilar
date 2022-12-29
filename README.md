@@ -76,3 +76,5 @@ or
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
 ```
+
+## Find Similar Words
