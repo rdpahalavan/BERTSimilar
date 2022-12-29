@@ -41,7 +41,7 @@ Either the name of the Wikipedia pages or the query can be given. If the query i
 or
 ```python
 # Get 5 Wikipedia pages based on the query
-similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+>>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
 # To get the Wikipedia pages used (duplicate pages are ignored),
 >>> similar.wikipedia_dataset_info
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
@@ -52,7 +52,7 @@ similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_que
 or
 ```python
 # Get 5 Wikipedia pages based on each query
-similar = BERTSimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
+>>> similar = BERTSimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
 # To get the Wikipedia pages used (duplicate pages are ignored),
 >>> similar.wikipedia_dataset_info
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
