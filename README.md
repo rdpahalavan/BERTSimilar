@@ -70,9 +70,9 @@ or
 File extensions supported are .docx and .txt .
 
 ```python
-similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
+>>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
 ```
 or
 ```python
-similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
+>>> similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
 ```
