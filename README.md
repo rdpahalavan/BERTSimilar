@@ -21,3 +21,7 @@ Import it using
 ```python
 >>> from BERTSimilarWords import BERTSimilarWords
 ```
+
+## Providing the vocabularies
+
+### Using Wikipedia pages
