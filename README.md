@@ -38,3 +38,29 @@ Either the name of the Wikipedia pages or the query can be given. If the query i
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
  'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.'}
 ```
+or
+```python
+# Get 5 Wikipedia pages based on the query
+similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+# To get the Wikipedia pages used (duplicate pages are ignored),
+>>> similar.wikipedia_dataset_info
+{'Apple': 'https://en.wikipedia.org/wiki/Apple',
+ 'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.',
+ 'Apples to Apples': 'https://en.wikipedia.org/wiki/Apples_to_Apples',
+ 'MacOS': 'https://en.wikipedia.org/wiki/MacOS'}
+```
+or
+```python
+# Get 5 Wikipedia pages based on each query
+similar = BERTSimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
+# To get the Wikipedia pages used (duplicate pages are ignored),
+>>> similar.wikipedia_dataset_info
+{'Apple': 'https://en.wikipedia.org/wiki/Apple',
+ 'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.',
+ 'Apples to Apples': 'https://en.wikipedia.org/wiki/Apples_to_Apples',
+ 'MacOS': 'https://en.wikipedia.org/wiki/MacOS',
+ 'Banana': 'https://en.wikipedia.org/wiki/Banana',
+ 'Cooking banana': 'https://en.wikipedia.org/wiki/Cooking_banana',
+ 'Banana republic': 'https://en.wikipedia.org/wiki/Banana_republic',
+ 'Banana ketchup': 'https://en.wikipedia.org/wiki/Banana_ketchup'}
+```
