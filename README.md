@@ -78,3 +78,5 @@ or
 ```
 
 ## Find Similar Words
+
+Similar words can be obtained using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
