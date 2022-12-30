@@ -80,3 +80,12 @@ or
 ## Find Similar Words
 
 Similar words can be obtained using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
+- **input_context** - the input context (optional) (default: None)
+- **input_words** - the input words
+- **output_words_ngram** - n-gram words expected as output (optional) (default: 1) (0 for all)
+- **max_output_words** - the total number of output words expected (optional) (default: 10)
+- **pos_to_exclude** - the output words are excluded if these part of speech tags are present in it (optional) (default: None)
+- **context_similarity_factor** - uses to tune the context matching process (optional) (default: 0.25)
+- **output_filter_factor** - uses to exclude similar words in the output (optional) (default: 0.5)
+- **single_word_split** - whether to split n-gram words when given as input (optional) (default: True)
+- **uncased_lemmatization** - whether to uncase and lemmatize the input (optional) (default: True)
