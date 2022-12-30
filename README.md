@@ -80,8 +80,8 @@ or
 ## Find Similar Words
 
 Similar words can be obtained using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
-- **input_context** - the input context (optional) (default: None)
 - **input_words** - the input words
+- **input_context** - the input context (optional) (default: None)
 - **output_words_ngram** - n-gram words expected as output (optional) (default: 1) (0 for all)
 - **max_output_words** - the total number of output words expected (optional) (default: 10)
 - **pos_to_exclude** - the output words are excluded if these part of speech tags are present in it (optional) (default: None)
@@ -89,3 +89,53 @@ Similar words can be obtained using the `find_similar_words` method. This method
 - **output_filter_factor** - uses to exclude similar words in the output (optional) (default: 0.5)
 - **single_word_split** - whether to split n-gram words when given as input (optional) (default: True)
 - **uncased_lemmatization** - whether to uncase and lemmatize the input (optional) (default: True)
+
+## Examples
+
+### Example 1
+
+```python
+>>> from BERTSimilarWords import BERTSimilarWords
+>>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+>>> similar.find_similar_words(input_context='company',input_words=['Apple'])
+{'iPhone': 0.7655301993367924,
+ 'Microsoft': 0.7644559773925612,
+ 'Samsung': 0.7483747939272186,
+ 'Nokia': 0.7418908483628721,
+ 'Macintosh': 0.7415292245659537,
+ 'iOS': 0.7409453358937249,
+ 'AppleCare': 0.7381210698272941,
+ 'iPadOS': 0.7112217377139232,
+ 'iTunes': 0.7007508157223745,
+ 'macOS': 0.69984740983893}
+>>> similar.find_similar_words(input_context='fruit',input_words=['Apple'])
+{'applejack': 0.8045216200651304,
+ 'Trees': 0.7926505935113519,
+ 'trees': 0.7806807879003239,
+ 'berries': 0.7689437435792672,
+ 'seeds': 0.7540070238557037,
+ 'peaches': 0.7381803534675645,
+ 'Orange': 0.733131237417253,
+ 'orchards': 0.7296196594053761,
+ 'juice': 0.7247635163014543,
+ 'nuts': 0.724424004884171}
+```
+
+### Example 2
+
+```python
+>>> from BERTSimilarWords import BERTSimilarWords
+>>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Tesla', wikipedia_query_limit=10)
+>>> similar.find_similar_words(input_context='Tesla Motors', input_words=['CEO'], output_words_ngram=5, max_output_words=5)
+{'Chief Executive Elon Musk handing': 0.7596588355056113,
+ '2018 CEO Elon Musk briefly': 0.751011374230985,
+ 'August 2018 CEO Elon Musk': 0.7492089016517951,
+ '2021 CEO Elon Musk revealed': 0.7470401856896459,
+ 'SEC questioned Tesla CFO Zach': 0.738144930474394}
+>>> similar.find_similar_words(input_words=['Nikola Tesla'], output_words_ngram=0, max_output_words=5)
+{'Tesla Nikola Tesla Corner': 0.9203870154998232,
+ 'IEEEThe Nikola Tesla Memorial': 0.8932847992637643,
+ 'electrical engineer Nikola Tesla': 0.8811208719958945,
+ 'Serbian American inventor Nikola Tesla': 0.8766566716046287,
+ 'Nikola Tesla Technical Museum': 0.8759513407776292}
+```
