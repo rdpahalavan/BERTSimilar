@@ -1,0 +1,9 @@
+torch>=1.13.0
+numpy>=1.21.0
+nltk>=3.7
+wikipedia>=1.4.0
+transformers>=4.25.0
+scikit-learn>=1.0.0
+tqdm>=4.64.0
+setuptools>=57.4.0
+python-docx>=0.8.0
