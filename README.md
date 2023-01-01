@@ -33,6 +33,7 @@ Either the name of the Wikipedia pages or the query can be given. If the query i
 ```python
 >>> wikipedia_pages = ['Apple', 'Apple Inc.']
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_page_list=wikipedia_pages)
+
 # To get the Wikipedia pages used,
 >>> similar.wikipedia_dataset_info
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
@@ -42,6 +43,7 @@ or
 ```python
 # Get 5 Wikipedia pages based on the query
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+
 # To get the Wikipedia pages used (duplicate pages are ignored),
 >>> similar.wikipedia_dataset_info
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
@@ -53,6 +55,7 @@ or
 ```python
 # Get 5 Wikipedia pages based on each query
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
+
 # To get the Wikipedia pages used (duplicate pages are ignored),
 >>> similar.wikipedia_dataset_info
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
@@ -97,6 +100,7 @@ Similar words can be obtained using the `find_similar_words` method. This method
 ```python
 >>> from BERTSimilarWords import BERTSimilarWords
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+
 >>> similar.find_similar_words(input_context='company',input_words=['Apple'])
 {'iPhone': 0.7655301993367924,
  'Microsoft': 0.7644559773925612,
@@ -108,6 +112,7 @@ Similar words can be obtained using the `find_similar_words` method. This method
  'iPadOS': 0.7112217377139232,
  'iTunes': 0.7007508157223745,
  'macOS': 0.69984740983893}
+ 
 >>> similar.find_similar_words(input_context='fruit',input_words=['Apple'])
 {'applejack': 0.8045216200651304,
  'Trees': 0.7926505935113519,
@@ -126,12 +131,14 @@ Similar words can be obtained using the `find_similar_words` method. This method
 ```python
 >>> from BERTSimilarWords import BERTSimilarWords
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Tesla', wikipedia_query_limit=10)
+
 >>> similar.find_similar_words(input_context='Tesla Motors', input_words=['CEO'], output_words_ngram=5, max_output_words=5)
 {'Chief Executive Elon Musk handing': 0.7596588355056113,
  '2018 CEO Elon Musk briefly': 0.751011374230985,
  'August 2018 CEO Elon Musk': 0.7492089016517951,
  '2021 CEO Elon Musk revealed': 0.7470401856896459,
  'SEC questioned Tesla CFO Zach': 0.738144930474394}
+ 
 >>> similar.find_similar_words(input_words=['Nikola Tesla'], output_words_ngram=0, max_output_words=5)
 {'Tesla Nikola Tesla Corner': 0.9203870154998232,
  'IEEEThe Nikola Tesla Memorial': 0.8932847992637643,
