@@ -29,7 +29,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
 
 ### Using Wikipedia Pages
 
-1. Using Wikipedia page names as a list (the content of the pages will be taken as input and processed)
+1) Using Wikipedia page names as a list (the content of the pages will be taken as input and processed)
 
 ```python
 >>> wikipedia_pages = ['Apple', 'Apple Inc.']
@@ -41,7 +41,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
  'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.'}
 ```
 
-2. Using Wikipedia search query as string (the content of the pages related to the query will be taken as input and processed)
+2) Using Wikipedia search query as string (the content of the pages related to the query will be taken as input and processed)
 
 ```python
 # Get 5 Wikipedia pages based on the query
@@ -55,7 +55,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
  'MacOS': 'https://en.wikipedia.org/wiki/MacOS'}
 ```
 
-3. Using Wikipedia search queries as a list (the content of the pages related to each query will be taken as input and processed)
+3) Using Wikipedia search queries as a list (the content of the pages related to each query will be taken as input and processed)
 
 ```python
 # Get 5 Wikipedia pages based on each query
@@ -77,13 +77,13 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
 
 File extensions supported are .docx and .txt (For other file types, please convert them to the supporting format)
 
-1. Using single text file (the content of the file will be taken as input and processed)
+1) Using single text file (the content of the file will be taken as input and processed)
 
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
 ```
 
-2. Using multiple text files (the contents of each file will be taken as input and processed)
+2) Using multiple text files (the contents of each file will be taken as input and processed)
 
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
@@ -205,4 +205,4 @@ These attributes can be used to get values or modify default values, and can be 
 
 ## References
 
-- Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gugger, S., Drame, M., Lhoest, Q., & Rush, A. M. (2020). Transformers: State-of-the-Art Natural Language Processing [Conference paper]. 38–45. https://www.aclweb.org/anthology/2020.emnlp-demos.6
+1) Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gugger, S., Drame, M., Lhoest, Q., & Rush, A. M. (2020). Transformers: State-of-the-Art Natural Language Processing [Conference paper]. 38–45. https://www.aclweb.org/anthology/2020.emnlp-demos.6
