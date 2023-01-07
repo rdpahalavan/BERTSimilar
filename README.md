@@ -83,11 +83,17 @@ or
 ## Find Similar Words
 
 Similar words can be obtained using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
-- **input_words** - the input words
-- **input_context** - the input context (optional) (default: None)
-- **output_words_ngram** - n-gram words expected as output (optional) (default: 1) (0 for all)
-- **max_output_words** - the total number of output words expected (optional) (default: 10)
+- **input_words** - the input words as list of strings
+- **input_context** - the input context as string (optional) (default: None)
+- **output_words_ngram** - n-gram words expected as output (optional) (default: 1)
+ - if 1, means output like {'apple', 'car'}
+ - if 2, means output like {'apple cake', 'modern car'}
+ - Likewise, maximum value is 9
+ - if 0, all n-grams combined like {'apple', 'apple laptop', 'red color car'}
+- **max_output_words** - the maximum output words to be generated (optional) (default: 10)
 - **pos_to_exclude** - the output words are excluded if these part of speech tags are present in it (optional) (default: None)
+ - if ['VBN'], the output word "used car" will be excluded as 'used' is a verb
+ - availabe POS tags can be found in the `Useful Methods` section
 - **context_similarity_factor** - uses to tune the context matching process (optional) (default: 0.25)
 - **output_filter_factor** - uses to exclude similar words in the output (optional) (default: 0.5)
 - **single_word_split** - whether to split n-gram words when given as input (optional) (default: True)
