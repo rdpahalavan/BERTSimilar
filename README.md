@@ -180,3 +180,17 @@ These attributes can be used to get values or modify default values, and can be 
 # This will give all the words processed from the given dataset
 >>> similar.bert_words
 ```
+
+- **bert_words_ngram** - to get the n-gram words
+  - bert_words_ngram[0] gives unigram words
+  - bert_words_ngram[1] gives bigram words
+  - bert_words_ngram[n-1] gives n-gram words
+- **bert_words_ngram** - to get the BERT word embeddings for the n-gram words
+  - bert_words_ngram[0] gives word embeddings of the unigram words
+  - bert_words_ngram[1] gives word embeddings of the bigram words
+  - bert_words_ngram[n-1] gives word embeddings of the n-gram words
+- **document_list** - to get the paragraphs
+- **punctuations** - to get the punctuations to be removed from the dataset (can be modified)
+- **doc_regex** - the regular expression to be used to process the text files (can be modified)
+- **stop_words** - the stop words to be ignored in the output (can be modified)
+- **pos_tags_info()** - to get the POS tags and information to be used in the `find_similar_words` method
