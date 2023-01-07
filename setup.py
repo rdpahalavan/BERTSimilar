@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setuptools.setup(
     name='BERTSimilarWords',
-    version='0.0.8',
+    version='0.0.10',
     description="Find Similar Words using BERT",
     keywords="BERT NLP",
     long_description=long_description,
