@@ -173,12 +173,16 @@ Similar words can be generated using the `find_similar_words` method. This metho
 
 ## Useful Attributes
 
-These attributes can be used to get values or modify default values, and can be used after the `load_dataset` method. For example, to get all the words
+These attributes can be used to get values or modify default values, and can be used after the `load_dataset` method. For example, to get the maximum n-gram supported
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
 
-# This will give all the words processed from the given dataset
->>> similar.bert_words
+# This will give the maximum n-gram supported (n-1)
+>>> similar.max_ngram
+10
+
+# To change this to only support up to 5-gram words
+>>> similar.max_ngram = 5
 ```
 
 - **bert_words_ngram** - to get the n-gram words
