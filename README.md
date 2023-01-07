@@ -82,22 +82,31 @@ or
 
 ## Find Similar Words
 
-Similar words can be obtained using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
+Similar words can be generated using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
+
 - **input_words** - the input words as (list of strings)
 - **input_context** - the input context (string) (optional) (default: None)
 - **output_words_ngram** - n-gram words expected as output (integer) (optional) (default: 1)
   - if 1, means output like {'apple', 'car'}
   - if 2, means output like {'apple cake', 'modern car'}
-  - Likewise, maximum value is 9
-  - if 0, all n-grams combined like {'apple', 'apple laptop', 'red color car'}
-- **max_output_words** - the maximum output words to be generated (integer) (optional) (default: 10)
-- **pos_to_exclude** - the output words are excluded if these part of speech tags are present in it (list of strings) (optional) (default: None)
-  - if ['VBN'], the output word "used car" will be excluded as 'used' is a verb (VBN means past particible verb)
+  - likewise, maximum value is 9
+  - if 0, all n-grams combined like {'Apple', 'Apple laptop', 'red color car'}
+- **max_output_words** - the maximum number of output words to be generated (integer) (optional) (default: 10)
+- **pos_to_exclude** - the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
+  - if ['VBN'], the word "used car" will be ignored in the output as 'used' is a verb (VBN means past particible verb)
   - availabe POS tags can be found in the [`Useful Methods`](#useful-methods) section
-- **context_similarity_factor** - uses to tune the context matching process (optional) (default: 0.25)
-- **output_filter_factor** - uses to exclude similar words in the output (optional) (default: 0.5)
-- **single_word_split** - whether to split n-gram words when given as input (optional) (default: True)
-- **uncased_lemmatization** - whether to uncase and lemmatize the input (optional) (default: True)
+- **context_similarity_factor** - uses to tune the context-matching process, find the best paragraphs related to the given input words (float) (optional) (default: 0.25)
+  - possible valuse are from 0 to 1
+  - value closer to 0 will do a strict context-matching and closer to 1 will do lenient context-matching
+- **output_filter_factor** - uses to ignore words that are similar to the given input in the output (float) (optional) (default: 0.5)
+  - possible values are from 0 to 1
+  - value closer to 0 will do strick comparison and value closer to 1 will do lenient comparison
+- **single_word_split** - whether to split n-gram words when given as input (boolean) (optional) (default: True)
+  - whether to split the n-gram words given as input into single words
+  - if True, "Apple phones" given as input will be split into 'Apple' and 'phones' separately and processed
+- **uncased_lemmatization** - whether to uncase and lemmatize the input (bool) (optional) (default: True)
+  - whether to uncase and lemmatize the input
+  - if True, "Apple phones" given as input will be converted to "apple phone" and processed
 
 ## Examples
 
