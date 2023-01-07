@@ -87,13 +87,13 @@ Similar words can be generated using the `find_similar_words` method. This metho
 - **input_words** - the input words as (list of strings)
 - **input_context** - the input context (string) (optional) (default: None)
 - **output_words_ngram** - n-gram words expected as output (integer) (optional) (default: 1)
-  - if 1, means output like {'apple', 'car'}
-  - if 2, means output like {'apple cake', 'modern car'}
+  - if 1, means output like *{'apple', 'car'}*
+  - if 2, means output like *{'apple cake', 'modern car'}*
   - likewise, maximum value is 9
-  - if 0, all n-grams combined like {'Apple', 'Apple laptop', 'red color car'}
+  - if 0, all n-grams combined like *{'Apple', 'Apple laptop', 'red color car'}*
 - **max_output_words** - the maximum number of output words to be generated (integer) (optional) (default: 10)
 - **pos_to_exclude** - the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
-  - if ['VBN'], the word "used car" will be ignored in the output as 'used' is a verb (VBN means past particible verb)
+  - if ['VBN'], the word *"used car"* will be ignored in the output as *"used"* is a verb (VBN means past particible verb)
   - availabe POS tags can be found in the [`Useful Methods`](#useful-methods) section
 - **context_similarity_factor** - uses to tune the context-matching process, find the best paragraphs related to the given input words (float) (optional) (default: 0.25)
   - possible valuse are from 0 to 1
@@ -103,12 +103,12 @@ Similar words can be generated using the `find_similar_words` method. This metho
   - value closer to 0 will do strick comparison and value closer to 1 will do lenient comparison
 - **single_word_split** - whether to split n-gram words when given as input (boolean) (optional) (default: True)
   - whether to split the n-gram words given as input into single words
-  - if True, "Apple phones" given as input will be split into 'Apple' and 'phones' separately and processed
+  - if True, *"Apple phones"* given as input will be split into *"Apple"* and *"phones"* separately and processed
 - **uncased_lemmatization** - whether to uncase and lemmatize the input (bool) (optional) (default: True)
   - whether to uncase and lemmatize the input
-  - if True, "Apple phones" given as input will be converted to "apple phone" and processed
+  - if True, *"Apple phones"* given as input will be converted to *"apple phone"* and processed
 
-## Examples
+## Full Examples
 
 ### Example 1
 
