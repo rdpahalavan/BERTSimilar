@@ -195,10 +195,10 @@ These attributes can be used to get values or modify default values, and can be 
   - bert_words_ngram[n-1] gives word embeddings of the n-gram words
 - **document_list** - to get the paragraphs
 - **punctuations** - to get the punctuations to be removed from the dataset (can be modified)
-  - *default: '''!"#$%&\'()*+,-./:—;<=>−?–@[\\]^_`{|}~'''*
+  - default: '''!"#$%&\'()*+,-./:—;<=>−?–@[\\]^_`{|}~'''
 - **doc_regex** - the regular expression to be used to process the text files (can be modified)
-  - *default: "[\([][0-9]+[\])]|[”“‘’‛‟]|\d+\s"*
+  - default: "[\([][0-9]+[\])]|[”“‘’‛‟]|\d+\s"
 - **stop_words** - the stop words to be ignored in the output (can be modified)
 - **max_heading_length** - total words in a paragraph less than this length will be considered as heading (can be modified)
-  - *default: 10*
+  - default: 10
 - **pos_tags_info()** - to get the POS tags and information to be used in the `find_similar_words` method
