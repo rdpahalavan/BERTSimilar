@@ -72,11 +72,16 @@ class BERTSimilarWords:
         """
         This method extracts and processes the text content and generates word embeddings using the BERT model. Either one of the (dataset_path,wikipedia_query,wikipedia_page_list) parameters should be given.
 
-        :param dataset_path: the dataset paths of the text files either as a string (one file) or a list of strings (multiple files) (supported files: .docx / .txt)
-        :param wikipedia_query: the Wikipedia search queries either as a string (one query) or a list of strings (multiple queries)
-        :param wikipedia_query_limit: maximum number of pages to extract for each query (only when wikipedia_query is given)
-        :param wikipedia_page_list: the list of names of Wikipedia pages to be extracted
-        :return: BERTSimilarWords object
+        Parameters
+        ----------
+        dataset_path : the dataset paths of the text files either as a string (one file) or a list of strings (multiple files) (supported files: .docx / .txt)
+
+        wikipedia_query : the Wikipedia search queries either as a string (one query) or a list of strings (multiple queries)
+
+        wikipedia_query_limit : maximum number of pages to extract for each query (only when wikipedia_query is given)
+
+        wikipedia_page_list : the list of names of Wikipedia pages to be extracted
+
         """
 
         if wikipedia_query is not None or wikipedia_page_list is not None:
@@ -424,16 +429,26 @@ class BERTSimilarWords:
         """
         This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary.
 
-        :param input_context: the input context (string) (optional) (default: None)
-        :param input_words: the input words as (list of strings)
-        :param output_words_ngram: n-gram words expected as output (integer) (optional) (default: 1)
-        :param pos_to_exclude: the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
-        :param max_output_words: the maximum number of output words to be generated (integer) (optional) (default: 10)
-        :param context_similarity_factor: uses to tune the context-matching process, find the best paragraphs related to the given input words (float) (optional) (default: 0.25) (Range: 0 to 1)
-        :param output_filter_factor: uses to ignore words that are similar to the given input in the output (float) (optional) (default: 0.5) (Range: 0 to 1)
-        :param single_word_split: whether to split n-gram words when given as input (boolean) (optional) (default: True)
-        :param uncased_lemmatization: whether to uncase and lemmatize the input (boolean) (optional) (default: True)
-        :return: dictionary with words and their confidence in terms of cosine similarity
+        Parameters
+        ----------
+        input_context : the input context (string) (optional) (default: None)
+
+        input_words : the input words as (list of strings)
+
+        output_words_ngram : n-gram words expected as output (integer) (optional) (default: 1)
+
+        pos_to_exclude : the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
+
+        max_output_words : the maximum number of output words to be generated (integer) (optional) (default: 10)
+
+        context_similarity_factor : uses to tune the context-matching process, find the best paragraphs related to the given input words (float) (optional) (default: 0.25) (Range: 0 to 1)
+
+        output_filter_factor : uses to ignore words that are similar to the given input in the output (float) (optional) (default: 0.5) (Range: 0 to 1)
+
+        single_word_split : whether to split n-gram words when given as input (boolean) (optional) (default: True)
+
+        uncased_lemmatization : whether to uncase and lemmatize the input (boolean) (optional) (default: True)
+
         """
 
         input_context_split, input_words_split, input_words_max, input_context_words, input_context_words_max = self._process_input_context_words(
