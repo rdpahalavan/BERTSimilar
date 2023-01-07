@@ -25,7 +25,7 @@ Import the module using
 
 ## Providing the Vocabulary
 
-Provide the literature (in terms of paragraphs), so the BERT model can generate the word embeddings for all the words present in the text.
+Provide the text (in terms of paragraphs), so the BERT model can generate the word embeddings for all the words present in the text.
 
 ### Using Wikipedia Pages
 
