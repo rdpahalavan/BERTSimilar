@@ -202,3 +202,7 @@ These attributes can be used to get values or modify default values, and can be 
 - **max_heading_length** - total words in a paragraph less than this length will be considered as heading (can be modified)
   - default: 10
 - **pos_tags_info()** - to get the POS tags and information to be used in the `find_similar_words` method
+
+## References
+
+Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gugger, S., Drame, M., Lhoest, Q., & Rush, A. M. (2020). Transformers: State-of-the-Art Natural Language Processing [Conference paper]. 38–45. https://www.aclweb.org/anthology/2020.emnlp-demos.6
