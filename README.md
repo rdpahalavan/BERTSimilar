@@ -98,7 +98,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
 - **output_words_ngram** - n-gram words expected as output (integer) (optional) (default: 1)
   - if 1, means output like *{'apple', 'car'}*
   - if 2, means output like *{'apple cake', 'modern car'}*
-  - likewise, maximum value is 9
+  - likewise, maximum value is 10
   - if 0, all n-grams combined like *{'Apple', 'Apple laptop', 'red color car'}*
 - **max_output_words** - the maximum number of output words to be generated (integer) (optional) (default: 10)
 - **pos_to_exclude** - the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
@@ -177,7 +177,7 @@ These attributes can be used to get values or modify default values, and can be 
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
 
-# This will give the maximum n-gram supported (n-1)
+# This will give the maximum n-gram supported (default: 10)
 >>> similar.max_ngram
 10
 
