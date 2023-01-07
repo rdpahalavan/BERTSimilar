@@ -8,8 +8,8 @@ BERT generates contextual word embeddings, so the word embedding for the same wo
 
 Vocabularies used to generate word embeddings can be given in two ways:
 
-* Using Wikipedia pages
-* Using text files (.docx and .txt)
+* [Using Wikipedia Pages](#using-wikipedia-pages)
+* [Using Text Files](#using-text-files)
 
 ## Install and Import
 
@@ -103,7 +103,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
 - **max_output_words** - the maximum number of output words to be generated (integer) (optional) (default: 10)
 - **pos_to_exclude** - the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
   - if ['VBN'], the word *"used car"* will be ignored in the output as *"used"* is a verb (VBN means past particible verb)
-  - availabe POS tags can be found in the [`Useful Methods`](#useful-methods) section
+  - availabe POS tags can be found in the [Useful Attributes](#useful-attributes) section
 - **context_similarity_factor** - uses to tune the context-matching process, find the best paragraphs related to the given input words (float) (optional) (default: 0.25)
   - possible valuse are from 0 to 1
   - value closer to 0 will do a strict context-matching and closer to 1 will do lenient context-matching
@@ -113,7 +113,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
 - **single_word_split** - whether to split n-gram words when given as input (boolean) (optional) (default: True)
   - whether to split the n-gram words given as input into single words
   - if True, *"Apple phones"* given as input will be split into *"Apple"* and *"phones"* separately and processed
-- **uncased_lemmatization** - whether to uncase and lemmatize the input (bool) (optional) (default: True)
+- **uncased_lemmatization** - whether to uncase and lemmatize the input (boolean) (optional) (default: True)
   - whether to uncase and lemmatize the input
   - if True, *"Apple phones"* given as input will be converted to *"apple phone"* and processed
 
@@ -171,4 +171,5 @@ Similar words can be generated using the `find_similar_words` method. This metho
  'Nikola Tesla Technical Museum': 0.8759513407776292}
 ```
 
-## Useful Methods
+## Useful Attributes
+
