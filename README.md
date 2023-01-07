@@ -93,7 +93,7 @@ File extensions supported are .docx and .txt (For other file types, please conve
 
 Similar words can be generated using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
 
-- **input_words** - the input words as (list of strings)
+- **input_words** - the input words (list of strings)
 - **input_context** - the input context (string) (optional) (default: None)
 - **output_words_ngram** - n-gram words expected as output (integer) (optional) (default: 1)
   - if 1, means output like *{'apple', 'car'}*
