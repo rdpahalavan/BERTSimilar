@@ -1,4 +1,5 @@
 # BERTSimilarWords
+
 ## Find Similar Words using BERT
 
 BERTSimilarWords is a python library that is used to find similar words using BERT. It uses a pre-trained BERT base model (cased) and cosine similarity to find the closest neighbor to the given words. It is similar to the Gensim Word2Vec similar words, but with context.
@@ -10,14 +11,14 @@ Vocabularies used to generate word embeddings can be given in two ways:
 * Using Wikipedia pages
 * Using text files (.docx and .txt)
 
-## Install
+## Install and Import
 
-Install the library using
+Install the Python package using
 ```
 pip install BERTSimilarWords
 ```
 
-Import it using
+Import the module using
 ```python
 >>> from BERTSimilarWords import BERTSimilarWords
 ```
@@ -26,9 +27,9 @@ Import it using
 
 Provide the literature (in terms of paragraphs), so the BERT model can generate the word embeddings for all the words present in the text.
 
-### Using Wikipedia pages
+### Using Wikipedia Pages
 
-Either the name of the Wikipedia pages or the query can be given. If the query is given, the Wikipedia pages related to that query will be taken.
+1. Using Wikipedia page names as a list (the content of the pages will be taken as input and processed)
 
 ```python
 >>> wikipedia_pages = ['Apple', 'Apple Inc.']
@@ -39,7 +40,9 @@ Either the name of the Wikipedia pages or the query can be given. If the query i
 {'Apple': 'https://en.wikipedia.org/wiki/Apple',
  'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.'}
 ```
-or
+
+2. Using Wikipedia search query as string (the content of the pages related to the query will be taken as input and processed)
+
 ```python
 # Get 5 Wikipedia pages based on the query
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
@@ -51,7 +54,9 @@ or
  'Apples to Apples': 'https://en.wikipedia.org/wiki/Apples_to_Apples',
  'MacOS': 'https://en.wikipedia.org/wiki/MacOS'}
 ```
-or
+
+3. Using Wikipedia search queries as a list (the content of the pages related to each query will be taken as input and processed)
+
 ```python
 # Get 5 Wikipedia pages based on each query
 >>> similar = BERTSimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
@@ -68,14 +73,18 @@ or
  'Banana ketchup': 'https://en.wikipedia.org/wiki/Banana_ketchup'}
 ```
 
-### Using text files
+### Using Text Files
 
-File extensions supported are .docx and .txt .
+File extensions supported are .docx and .txt (For other file types, please convert them to the supporting format)
+
+1. Using single text file (the content of the file will be taken as input and processed)
 
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
 ```
-or
+
+2. Using multiple text files (the contents of each file will be taken as input and processed)
+
 ```python
 >>> similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
 ```
