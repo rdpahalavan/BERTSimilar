@@ -173,3 +173,10 @@ Similar words can be generated using the `find_similar_words` method. This metho
 
 ## Useful Attributes
 
+These attributes can be used to get values or modify default values, and can be used after the `load_dataset` method. For example, to get all the words
+```python
+>>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
+
+# This will give all the words processed from the given dataset
+>>> similar.bert_words
+```
