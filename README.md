@@ -93,7 +93,7 @@ Similar words can be obtained using the `find_similar_words` method. This method
 - **max_output_words** - the maximum output words to be generated (integer) (optional) (default: 10)
 - **pos_to_exclude** - the output words are excluded if these part of speech tags are present in it (list of strings) (optional) (default: None)
   - if ['VBN'], the output word "used car" will be excluded as 'used' is a verb (VBN means past particible verb)
-  - availabe POS tags can be found in the [Useful Methods](#useful-methods) section
+  - availabe POS tags can be found in the [`Useful Methods`](#useful-methods) section
 - **context_similarity_factor** - uses to tune the context matching process (optional) (default: 0.25)
 - **output_filter_factor** - uses to exclude similar words in the output (optional) (default: 0.5)
 - **single_word_split** - whether to split n-gram words when given as input (optional) (default: True)
