@@ -1,8 +1,8 @@
-# BERTSimilarWords
+# BERTSimilar
 
-## Find Similar Words using BERT
+## Get Similar Words and Embeddings using BERT Models
 
-BERTSimilarWords is a python library that is used to find similar words using BERT. It uses a pre-trained BERT base model (cased) and cosine similarity to find the closest neighbor to the given words. It is similar to the Gensim Word2Vec similar words, but with context.
+BERTSimilar is used to get similar words and embeddings using BERT models. It uses **bert-base-cased** model as default and cosine similarity to find the closest word to the given words.
 
 BERT generates contextual word embeddings, so the word embedding for the same word will differ based on its context. For example, the word **Apple** in *"Apple is a good fruit"* and *"Apple is a good phone"* have different word embeddings. Generating word embeddings for all vocabulary in the English language based on context is time-consuming and needs many resources. So, this library requires the vocabulary for generating word embeddings beforehand.
 
@@ -15,12 +15,12 @@ Vocabularies used to generate word embeddings can be given in two ways:
 
 Install the Python package using
 ```
-pip install BERTSimilarWords
+pip install BERTSimilar
 ```
 
 Import the module using
 ```python
->>> from BERTSimilarWords import BERTSimilarWords
+>>> from BERTSimilar import SimilarWords
 ```
 
 ## Providing the Vocabulary
@@ -33,7 +33,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
 
 ```python
 >>> wikipedia_pages = ['Apple', 'Apple Inc.']
->>> similar = BERTSimilarWords().load_dataset(wikipedia_page_list=wikipedia_pages)
+>>> similar = SimilarWords().load_dataset(wikipedia_page_list=wikipedia_pages)
 
 # To get the Wikipedia pages used,
 >>> similar.wikipedia_dataset_info
@@ -45,7 +45,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
 
 ```python
 # Get 5 Wikipedia pages based on the query
->>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+>>> similar = SimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
 
 # To get the Wikipedia pages used (duplicate pages are ignored),
 >>> similar.wikipedia_dataset_info
@@ -59,7 +59,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
 
 ```python
 # Get 5 Wikipedia pages based on each query
->>> similar = BERTSimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
+>>> similar = SimilarWords().load_dataset(wikipedia_query=['Apple', 'Banana'], wikipedia_query_limit=5)
 
 # To get the Wikipedia pages used (duplicate pages are ignored),
 >>> similar.wikipedia_dataset_info
@@ -80,13 +80,13 @@ File extensions supported are .docx and .txt (For other file types, please conve
 1) Using single text file (the content of the file will be taken as input and processed)
 
 ```python
->>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
+>>> similar = SimilarWords().load_dataset(dataset_path='Book_1.docx')
 ```
 
 2) Using multiple text files (the contents of each file will be taken as input and processed)
 
 ```python
->>> similar = BERTSimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
+>>> similar = SimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
 ```
 
 ## Find Similar Words
@@ -122,8 +122,8 @@ Similar words can be generated using the `find_similar_words` method. This metho
 ### Example 1
 
 ```python
->>> from BERTSimilarWords import BERTSimilarWords
->>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
+>>> from BERTSimilar import SimilarWords
+>>> similar = SimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
 
 >>> similar.find_similar_words(input_context='company',input_words=['Apple'])
 {'iPhone': 0.7655301993367924,
@@ -153,8 +153,8 @@ Similar words can be generated using the `find_similar_words` method. This metho
 ### Example 2
 
 ```python
->>> from BERTSimilarWords import BERTSimilarWords
->>> similar = BERTSimilarWords().load_dataset(wikipedia_query='Tesla', wikipedia_query_limit=10)
+>>> from BERTSimilar import SimilarWords
+>>> similar = SimilarWords().load_dataset(wikipedia_query='Tesla', wikipedia_query_limit=10)
 
 >>> similar.find_similar_words(input_context='Tesla Motors', input_words=['CEO'], output_words_ngram=5, max_output_words=5)
 {'Chief Executive Elon Musk handing': 0.7596588355056113,
@@ -175,7 +175,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
 
 These attributes can be used to get values or modify default values, and can be used after the `load_dataset` method. For example, to get the maximum n-gram supported
 ```python
->>> similar = BERTSimilarWords().load_dataset(dataset_path='Book_1.docx')
+>>> similar = SimilarWords().load_dataset(dataset_path='Book_1.docx')
 
 # This will give the maximum n-gram supported (default: 10)
 >>> similar.max_ngram
