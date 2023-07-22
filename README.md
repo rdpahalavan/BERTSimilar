@@ -181,7 +181,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
  'Nikola Tesla Technical Museum': 0.8759513407776292}
 ```
 
-## Useful Attributes
+## Attributes
 
 These attributes can be used to get values or modify default values and can be used after the `load_dataset` method. For example, to get the maximum n-gram supported
 ```python
