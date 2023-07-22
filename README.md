@@ -89,6 +89,16 @@ File extensions supported are .docx and .txt (For other file types, please conve
 >>> similar = SimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
 ```
 
+### BERTSimilar() Parameters
+
+You can pass these parameters to customize the initialization.
+
+- **model** - the BERT model to use (default: bert-base-cased)
+- **max_heading_length** - the maximum heading length. Lengths more than this are considered paragraphs (default: 10)
+- **max_document_length** - the maximum paragraph length. Lengths more than this are split into multiple paragraphs (default: 300)
+- **exclude_stopwords** - by default all stopwords are excluded from tags. To include stopwords, pass the stopwords as a list of strings to include (default: None)
+- **embeddings_scaler** - Scaler to standardize the embeddings (default: None)
+
 ## Find Similar Words
 
 Similar words can be generated using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
