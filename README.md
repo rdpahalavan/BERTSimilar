@@ -41,7 +41,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
  'Apple Inc.': 'https://en.wikipedia.org/wiki/Apple_Inc.'}
 ```
 
-2) Using Wikipedia search query as string (the content of the pages related to the query will be taken as input and processed)
+2) Using Wikipedia search query as a string (the content of the pages related to the query will be taken as input and processed)
 
 ```python
 # Get 5 Wikipedia pages based on the query
@@ -77,7 +77,7 @@ Provide the text (in terms of paragraphs), so the BERT model can generate the wo
 
 File extensions supported are .docx and .txt (For other file types, please convert them to the supporting format)
 
-1) Using single text file (the content of the file will be taken as input and processed)
+1) Using a single text file (the content of the file will be taken as input and processed)
 
 ```python
 >>> similar = SimilarWords().load_dataset(dataset_path='Book_1.docx')
@@ -108,18 +108,18 @@ Similar words can be generated using the `find_similar_words` method. This metho
 - **output_words_ngram** - n-gram words expected as output (integer) (optional) (default: 1)
   - if 1, means output like *{'apple', 'car'}*
   - if 2, means output like *{'apple cake', 'modern car'}*
-  - likewise, maximum value is 10
+  - likewise, the maximum value is 10
   - if 0, all n-grams combined like *{'Apple', 'Apple laptop', 'red color car'}*
 - **max_output_words** - the maximum number of output words to be generated (integer) (optional) (default: 10)
 - **pos_to_exclude** - the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
-  - if ['VBN'], the word *"used car"* will be ignored in the output as *"used"* is a verb (VBN means past particible verb)
-  - availabe POS tags can be found in the [Useful Attributes](#useful-attributes) section
-- **context_similarity_factor** - uses to tune the context-matching process, find the best paragraphs related to the given input words (float) (optional) (default: 0.25)
-  - possible valuse are from 0 to 1
-  - value closer to 0 will do a strict context-matching and closer to 1 will do lenient context-matching
+  - if ['VBN'], the word *"used car"* will be ignored in the output as *"used"* is a verb (VBN means past participle verb)
+  - available POS tags can be found in the [Useful Attributes](#useful-attributes) section
+- **context_similarity_factor** - used to tune the context-matching process, and find the best paragraphs related to the given input words (float) (optional) (default: 0.25)
+  - possible values are from 0 to 1
+  - value closer to 0 will do a strict context-matching and a closer to 1 will do lenient context-matching
 - **output_filter_factor** - uses to ignore words that are similar to the given input in the output (float) (optional) (default: 0.5)
   - possible values are from 0 to 1
-  - value closer to 0 will do strick comparison and value closer to 1 will do lenient comparison
+  - value closer to 0 will do strict comparison and a value closer to 1 will do a lenient comparison
 - **single_word_split** - whether to split n-gram words when given as input (boolean) (optional) (default: True)
   - whether to split the n-gram words given as input into single words
   - if True, *"Apple phones"* given as input will be split into *"Apple"* and *"phones"* separately and processed
@@ -127,7 +127,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
   - whether to uncase and lemmatize the input
   - if True, *"Apple phones"* given as input will be converted to *"apple phone"* and processed
 
-## Full Examples
+## Demo
 
 ### Example 1
 
@@ -183,7 +183,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
 
 ## Useful Attributes
 
-These attributes can be used to get values or modify default values, and can be used after the `load_dataset` method. For example, to get the maximum n-gram supported
+These attributes can be used to get values or modify default values and can be used after the `load_dataset` method. For example, to get the maximum n-gram supported
 ```python
 >>> similar = SimilarWords().load_dataset(dataset_path='Book_1.docx')
 
@@ -212,10 +212,3 @@ These attributes can be used to get values or modify default values, and can be 
 - **max_heading_length** - total words in a paragraph less than this length will be considered as heading (can be modified)
   - default: 10
 - **pos_tags_info()** - to get the POS tags and information to be used in the `find_similar_words` method
-
-## References
-
-1) Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gugger, S., Drame, M., Lhoest, Q., & Rush, A. M. (2020). Transformers: State-of-the-Art Natural Language Processing [Conference paper]. 38–45. https://www.aclweb.org/anthology/2020.emnlp-demos.6
-2) Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., & Chintala, S. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library [Conference paper]. Advances in Neural Information Processing Systems 32, 8024–8035. http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf
-3) Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V. and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P. and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research 12, 2825-2830. https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html
-4) Bird, S., Klein, E., & Loper, E. (2009). Natural Language Processing with Python: Analyzing Text with the Natural Language Toolkit. O'Reilly Media, Inc.
