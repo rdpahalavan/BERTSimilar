@@ -8,8 +8,8 @@ BERT generates contextual word embeddings, so the word embedding for the same wo
 
 Vocabularies used to generate word embeddings can be given in two ways:
 
-* [Using Wikipedia Pages](#using-wikipedia-pages)
-* [Using Text Files](#using-text-files)
+* Using Wikipedia Pages
+* Using Text Files (.docx and .txt)
 
 ## Install and Import
 
