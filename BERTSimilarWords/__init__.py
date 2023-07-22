@@ -1,1 +1,0 @@
-from .BERTSimilarWords import BERTSimilarWords
