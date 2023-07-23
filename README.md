@@ -188,6 +188,8 @@ Similar words are generated using the `find_similar_words` method. This method c
 
 ## Attributes
 
+These attributes can be used to get values or modify default values of the SimilarWords class.
+
 To get the value of the attributes,
 
 ```python
@@ -200,20 +202,44 @@ To get the value of the attributes,
 >>> similar.bert_vectors
 ```
 
+To change the values of the attributes,
+
+```python
+>>> similar = SimilarWords()
+>>> similar.max_ngram
+10
+
+>>> similar.max_ngram = 12
+>>> similar = similar.load_dataset(dataset_path='Book_1.docx')
+>>> similar.max_ngram
+12
+```
+
+- **tokenizer** -  to get the BERT tokenizer
+- **model** - to get the BERT model
+- 
+- **bert_words** -  to get all words
+- **bert_vectors** -  to get embeddings of all words
 - **bert_words_ngram** - to get the n-gram words
   - bert_words_ngram[0] gives unigram words
   - bert_words_ngram[1] gives bigram words
   - bert_words_ngram[n-1] gives n-gram words
-- **bert_words_ngram** - to get the BERT word embeddings for the n-gram words
+- **bert_vectors_ngram** - to get the BERT word embeddings for the n-gram words
   - bert_words_ngram[0] gives word embeddings of the unigram words
   - bert_words_ngram[1] gives word embeddings of the bigram words
   - bert_words_ngram[n-1] gives word embeddings of the n-gram words
+- **bert_words_all** - to get all n-gram words as a flattened list
+- **bert_vectors_all** - to get all embeddings as a flattened list
 - **document_list** - to get the paragraphs
-- **punctuations** - to get the punctuations to be removed from the dataset (can be modified)
+- **max_ngram** - maximum n-gram words to generate
+  - default: 10 (10-gram words)
+- **punctuations** - to get the punctuations to be removed from the dataset
   - default: '''!"#$%&\'()*+,-./:—;<=>−?–@[\\]^_`{|}~'''
-- **doc_regex** - the regular expression to be used to process the text files (can be modified)
+- **doc_regex** - the regular expression to be used to process the text files
   - default: "[\([][0-9]+[\])]|[”“‘’‛‟]|\d+\s"
 - **stop_words** - the stop words to be ignored in the output (can be modified)
-- **max_heading_length** - total words in a paragraph less than this length will be considered as heading (can be modified)
+- **max_heading_length** - total words in a paragraph less than this length will be considered as heading
   - default: 10
+- **max_document_length** - total words in a paragraph greater than this will be split into multiple paragraphs
+  - default: 300
 - **pos_tags_info()** - to get the POS tags and information to be used in the `find_similar_words` method
