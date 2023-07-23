@@ -89,7 +89,7 @@ File extensions supported are .docx and .txt (For other file types, please conve
 >>> similar = SimilarWords().load_dataset(dataset_path=['Book_1.docx','Book_1.txt'])
 ```
 
-### BERTSimilar() Parameters
+### SimilarWords() Parameters
 
 You can pass these parameters to customize the initialization.
 
