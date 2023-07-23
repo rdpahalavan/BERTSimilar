@@ -101,10 +101,11 @@ You can pass these parameters to customize the initialization.
 
 ## Find Similar Words
 
-Similar words can be generated using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The parameters for this method are
+Similar words are generated using the `find_similar_words` method. This method calculates the cosine similarity between the average of the input words based on the given context and all the words present in the given vocabulary. The similar words and the embedding used to select the nearest words will be returned. This embedding is the representation of input words and context. The parameters for this method are
 
 - **input_words** - the input words (list of strings)
 - **input_context** - the input context (string) (optional) (default: None)
+- **input_embedding** - an embedding can be given in place of input words and context (numpy array) (default: None)
 - **output_words_ngram** - n-gram words expected as output (integer) (optional) (default: 1)
   - if 1, means output like *{'apple', 'car'}*
   - if 2, means output like *{'apple cake', 'modern car'}*
@@ -119,7 +120,7 @@ Similar words can be generated using the `find_similar_words` method. This metho
   - value closer to 0 will do a strict context-matching and a closer to 1 will do lenient context-matching
 - **output_filter_factor** - uses to ignore words that are similar to the given input in the output (float) (optional) (default: 0.5)
   - possible values are from 0 to 1
-  - value closer to 0 will do strict comparison and a value closer to 1 will do a lenient comparison
+  - value closer to 0 will do a strict comparison and a value closer to 1 will do a lenient comparison
 - **single_word_split** - whether to split n-gram words when given as input (boolean) (optional) (default: True)
   - whether to split the n-gram words given as input into single words
   - if True, *"Apple phones"* given as input will be split into *"Apple"* and *"phones"* separately and processed
