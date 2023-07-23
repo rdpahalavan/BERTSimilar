@@ -136,7 +136,8 @@ Similar words are generated using the `find_similar_words` method. This method c
 >>> from BERTSimilar import SimilarWords
 >>> similar = SimilarWords().load_dataset(wikipedia_query='Apple', wikipedia_query_limit=5)
 
->>> similar.find_similar_words(input_context='company',input_words=['Apple'])
+>>> words, embedding = similar.find_similar_words(input_context='company',input_words=['Apple'])
+>>> words
 {'iPhone': 0.7655301993367924,
  'Microsoft': 0.7644559773925612,
  'Samsung': 0.7483747939272186,
@@ -148,7 +149,8 @@ Similar words are generated using the `find_similar_words` method. This method c
  'iTunes': 0.7007508157223745,
  'macOS': 0.69984740983893}
 
->>> similar.find_similar_words(input_context='fruit',input_words=['Apple'])
+>>> words, embedding = similar.find_similar_words(input_context='fruit',input_words=['Apple'])
+>>> words
 {'applejack': 0.8045216200651304,
  'Trees': 0.7926505935113519,
  'trees': 0.7806807879003239,
@@ -167,14 +169,16 @@ Similar words are generated using the `find_similar_words` method. This method c
 >>> from BERTSimilar import SimilarWords
 >>> similar = SimilarWords().load_dataset(wikipedia_query='Tesla', wikipedia_query_limit=10)
 
->>> similar.find_similar_words(input_context='Tesla Motors', input_words=['CEO'], output_words_ngram=5, max_output_words=5)
+>>> words, embedding = similar.find_similar_words(input_context='Tesla Motors', input_words=['CEO'], output_words_ngram=5, max_output_words=5)
+>>> words
 {'Chief Executive Elon Musk handing': 0.7596588355056113,
  '2018 CEO Elon Musk briefly': 0.751011374230985,
  'August 2018 CEO Elon Musk': 0.7492089016517951,
  '2021 CEO Elon Musk revealed': 0.7470401856896459,
  'SEC questioned Tesla CFO Zach': 0.738144930474394}
 
->>> similar.find_similar_words(input_words=['Nikola Tesla'], output_words_ngram=0, max_output_words=5)
+>>> words, embedding = similar.find_similar_words(input_words=['Nikola Tesla'], output_words_ngram=0, max_output_words=5)
+>>> words
 {'Tesla Nikola Tesla Corner': 0.9203870154998232,
  'IEEEThe Nikola Tesla Memorial': 0.8932847992637643,
  'electrical engineer Nikola Tesla': 0.8811208719958945,
