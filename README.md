@@ -114,7 +114,7 @@ Similar words are generated using the `find_similar_words` method. This method c
 - **max_output_words** - the maximum number of output words to be generated (integer) (optional) (default: 10)
 - **pos_to_exclude** - the words are ignored in the output if these part of speech tags are present in it (list of strings) (optional) (default: None)
   - if ['VBN'], the word *"used car"* will be ignored in the output as *"used"* is a verb (VBN means past participle verb)
-  - available POS tags can be found in the [Useful Attributes](#useful-attributes) section
+  - available POS tags can be found in the [Attributes](#Attributes) section
 - **context_similarity_factor** - used to tune the context-matching process, and find the best paragraphs related to the given input words (float) (optional) (default: 0.25)
   - possible values are from 0 to 1
   - value closer to 0 will do a strict context-matching and a closer to 1 will do lenient context-matching
