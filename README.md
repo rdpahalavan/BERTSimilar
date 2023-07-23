@@ -188,16 +188,16 @@ Similar words are generated using the `find_similar_words` method. This method c
 
 ## Attributes
 
-These attributes can be used to get values or modify default values and can be used after the `load_dataset` method. For example, to get the maximum n-gram supported
+To get the value of the attributes,
+
 ```python
 >>> similar = SimilarWords().load_dataset(dataset_path='Book_1.docx')
 
-# This will give the maximum n-gram supported (default: 10)
->>> similar.max_ngram
-10
+# This will return all the words
+>>> similar.bert_words
 
-# To change this to only support up to 5-gram words
->>> similar.max_ngram = 5
+# This will return the embeddings for all the words
+>>> similar.bert_vectors
 ```
 
 - **bert_words_ngram** - to get the n-gram words
