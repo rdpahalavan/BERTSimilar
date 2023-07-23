@@ -217,7 +217,6 @@ To change the values of the attributes,
 
 - **tokenizer** -  to get the BERT tokenizer
 - **model** - to get the BERT model
-- 
 - **bert_words** -  to get all words
 - **bert_vectors** -  to get embeddings of all words
 - **bert_words_ngram** - to get the n-gram words
